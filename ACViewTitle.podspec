@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ACViewTitle'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ACViewTitle.'
+  s.summary          = 'Custon Tab View Title with buttons'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,14 +21,14 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/asfcarvalho@me.com/ACViewTitle'
+  s.homepage         = 'https://github.com/asfcarvalho/ACTabViewTitle'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'asfcarvalho@me.com' => 'asfcarvalho@me.com' }
-  s.source           = { :git => 'https://github.com/asfcarvalho@me.com/ACViewTitle.git', :tag => s.version.to_s }
+  s.author           = { 'Anderson da Silva Ferreira de Carvalho' => 'asfcarvalho@me.com' }
+  s.source           = { :git => 'https://github.com/asfcarvalho/ACTabViewTitle.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'ACViewTitle/Classes/**/*'
   
@@ -37,6 +37,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+   s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
