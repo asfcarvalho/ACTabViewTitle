@@ -65,11 +65,11 @@ open class UIViewTitleRightSecond: UIViewTitleRight {
             btnRigthSecond?.removeFromSuperview()
         }
         
-        let yHeigth = Int((self.frameTemp?.height ?? 0) / 2)
-        let y = yHeigth - Int((imgRightSecondHeigth ?? 20) / 2)
+        let yHeigth = Int((self.frameTemp?.height ?? 44) / 2)
+        let y = Int(abs(yHeigth - Int((imgRightSecondHeigth ?? 20) / 2)))
         let imgWidth = (imgRightSecondWidth ?? 20)
         
-        xRigthSecond = xRigth - imgWidth - (rightSecondPosition ?? 8) //- (xRigth)
+        xRigthSecond = Int(abs(xRigth - imgWidth - (rightSecondPosition ?? 8))) //- (xRigth)
         
         btnRigthSecond = UIButton(frame: CGRect(x: xRigthSecond ?? xRigth, y: y, width: imgRightSecondWidth ?? 20, height: imgRightSecondHeigth ?? 20))
         

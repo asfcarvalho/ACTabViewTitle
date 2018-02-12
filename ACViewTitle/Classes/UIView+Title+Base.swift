@@ -12,11 +12,11 @@ import UIKit
 open class UIViewTitleBase: UIView {
 
     weak open var delegate : UIViewTitleDelegate?
-    @IBOutlet var btnLeft: UIButton?
-    @IBOutlet var btnRigth: UIButton?
-    @IBOutlet var btnRigthSecond: UIButton?
-    @IBOutlet var lblNotification: UILabel?
-    @IBOutlet var lblTitleMenu: UILabel?
+    @IBOutlet public  var btnLeft: UIButton?
+    @IBOutlet public  var btnRigth: UIButton?
+    @IBOutlet public var btnRigthSecond: UIButton?
+    @IBOutlet public var lblNotification: UILabel?
+    @IBOutlet public var lblTitleMenu: UILabel?
     
     var rightPosition: Int?
     var rightSecondPosition: Int?
@@ -28,11 +28,12 @@ open class UIViewTitleBase: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        print("frame 1: \(frame)")
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+        print("frame 2: \(frame)")
         frameTemp = CGRect(x: frame.minX, y: frame.minY, width: UIScreen.main.bounds.size.width, height: frame.height)
         
         self.updateConstraints()

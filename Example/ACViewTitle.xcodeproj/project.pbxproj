@@ -409,6 +409,7 @@
 		607FACED1AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -462,6 +463,7 @@
 		607FACEE1AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -509,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 072A03BAE16B8BAA7C0E98F2 /* Pods-ACViewTitle_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7TKVJKXN5X;
 				INFOPLIST_FILE = ACViewTitle/Info.plist;
@@ -525,6 +528,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD1E83FD5F8689297BE2AB70 /* Pods-ACViewTitle_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7TKVJKXN5X;
 				INFOPLIST_FILE = ACViewTitle/Info.plist;
@@ -541,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1A950217C743E04D7E39EBD /* Pods-ACViewTitle_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = 7TKVJKXN5X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -563,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9308DF438E405635A0F7B29 /* Pods-ACViewTitle_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = 7TKVJKXN5X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

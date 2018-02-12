@@ -20,14 +20,14 @@ open class UIViewTitleLeft: UIViewTitleRightSecond {
     
     
     
-    @IBInspectable var imageLeft: UIImage? {
+    @IBInspectable open var imageLeft: UIImage? {
         didSet{
             self.imgLeft = imageLeft
             setupView()
         }
     }
     
-    @IBInspectable var imageLeftWidth: Int {
+    @IBInspectable open var imageLeftWidth: Int {
         set{
             self.imgLeftWidth = newValue
             setupView()
@@ -37,7 +37,7 @@ open class UIViewTitleLeft: UIViewTitleRightSecond {
         }
     }
     
-    @IBInspectable var imageLeftHeigth: Int {
+    @IBInspectable open var imageLeftHeigth: Int {
         set{
             self.imgLeftHeigth = newValue
             setupView()
@@ -47,7 +47,7 @@ open class UIViewTitleLeft: UIViewTitleRightSecond {
         }
     }
     
-    @IBInspectable var leftImgPosition: Int {
+    @IBInspectable open var leftImgPosition: Int {
         set{
             self.leftPosition = newValue
             setupView()
@@ -63,62 +63,22 @@ open class UIViewTitleLeft: UIViewTitleRightSecond {
     
     override func setupView() {
         if btnLeft != nil {
-            btnLeft?.removeFromSuperview()
+            self.btnLeft?.removeFromSuperview()
         }
         
-        let heightTemp = Int((self.frameTemp?.height ?? 20) / 2)
+        let heightTemp = Int((self.frameTemp?.height ?? 44) / 2)
         
-        let y = heightTemp - Int((imgLeftHeigth ?? 20) / 2)
+        let y = Int(abs(heightTemp - Int((imgLeftHeigth ?? 20) / 2)))
         
-        btnLeft = UIButton(frame: CGRect(x: (leftPosition ?? 8), y: y, width: imgLeftWidth ?? 20, height: imgLeftHeigth ?? 20))
-        
-        btnLeft?.touchAreaEdgeInsets = UIEdgeInsets(top: -100, left: -100, bottom: -10, right: -10)
-        
+        btnLeft = UIButton(frame: CGRect(x: (leftPosition ?? 8), y: y, width: imgLeftWidth ?? 44, height: imgLeftHeigth ?? 44))
+
         if imgLeft != nil {
             btnLeft?.setImage(imgLeft, for: .normal)
             btnLeft?.addTarget(self, action: #selector(buttonLeftTapped(_:)), for: .touchUpInside)
-            btnLeft?.clipsToBounds = false
             self.addSubview(btnLeft ?? UIButton())
         }
         
         super.setupView()
-    }
-    
-    
-}
-
-private var pTouchAreaEdgeInsets: UIEdgeInsets = .zero
-
-extension UIButton {
-    
-    var touchAreaEdgeInsets: UIEdgeInsets {
-        get {
-            if let value = objc_getAssociatedObject(self, &pTouchAreaEdgeInsets) as? NSValue {
-                var edgeInsets: UIEdgeInsets = .zero
-                value.getValue(&edgeInsets)
-                return edgeInsets
-            }
-            else {
-                return .zero
-            }
-        }
-        set(newValue) {
-            var newValueCopy = newValue
-            let objCType = NSValue(uiEdgeInsets: .zero).objCType
-            let value = NSValue(&newValueCopy, withObjCType: objCType)
-            objc_setAssociatedObject(self, &pTouchAreaEdgeInsets, value, .OBJC_ASSOCIATION_RETAIN)
-        }
-    }
-    
-    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        if UIEdgeInsetsEqualToEdgeInsets(self.touchAreaEdgeInsets, .zero) || !self.isEnabled || self.isHidden {
-            return super.point(inside: point, with: event)
-        }
-        
-        let relativeFrame = self.bounds
-        let hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.touchAreaEdgeInsets)
-        
-        return hitFrame.contains(point)
-    }
+    }    
 }
 

@@ -101,12 +101,10 @@ open class UIViewTitleText: UIViewTitleBase {
             x = 0
         }
         
-        let yHeight = Int((self.frameTemp?.height ?? 0) / 2)
+        let yHeight = Int((self.frameTemp?.height ?? 44) / 2)
         
-        lblTitleMenu = UILabel(frame: CGRect(x: x, y: yHeight - 22, width: (xRigthSecond ?? xRigth) - x - 20, height: Int((self.frameTemp?.height ?? 0))))
+        lblTitleMenu = UILabel(frame: CGRect(x: x, y: yHeight - 22, width: (xRigthSecond ?? xRigth) - x - 20, height: Int((self.frameTemp?.height ?? 44))))
         
-        
-        //Int(self.frame.width) - Int(btnRigth?.frame.width ?? 0) - (rightPosition ?? 0)
         
         self.lblTitleMenu?.textColor = labelColor
         self.lblTitleMenu?.font = UIFont(name: self.fontDefault.fontName, size: self.fontSize)

@@ -65,17 +65,17 @@ open class UIViewTitleRight: UIViewTitleText {
             btnRigth?.removeFromSuperview()
         }
         
-        let yHeigth = Int((self.frameTemp?.height ?? 0) / 2)
-        let y = yHeigth - Int((imgRightHeigth ?? 20) / 2)
-        let width = Int((self.frameTemp?.width ?? 0))
-        xRigth = width - ((imgRightWidth ?? 20) + (rightPosition ?? 8))
+        let yHeigth = Int((self.frameTemp?.height ?? 44) / 2)
+        let y = Int(abs(yHeigth - Int((imgRightHeigth ?? 20) / 2)))
+        let width = Int((self.frameTemp?.width ?? 375))
+        
+        xRigth = Int(abs(width - ((imgRightWidth ?? 20) + (rightPosition ?? 8))))
         
         btnRigth = UIButton(frame: CGRect(x: xRigth, y: y, width: imgRightWidth ?? 20, height: imgRightHeigth ?? 20))
         
         if imgRight != nil {
             btnRigth?.setImage(imgRight, for: .normal)
             btnRigth?.addTarget(self, action: #selector(buttonRightTapped(_:)), for: .touchUpInside)
-            
             
             self.addSubview(btnRigth ?? UIButton())
         }
